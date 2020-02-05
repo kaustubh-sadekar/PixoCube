@@ -4,7 +4,6 @@ namespace kos
 {
 	imgMap::imgMap()
 	{   
-	    // this-> aperture = 340;
 	    this-> Hd = 400;
 	    this-> Wd = (this->Hd)*2;
 	}
@@ -59,21 +58,18 @@ namespace kos
 
 	void Obj3D::rotateObj(double alpha, double beta, double gamma)
 	{
-		// cv::Mat Rx = (cv::Mat_<double>(3,3) << 1,0,0,0,cos(alpha),-1*sin(alpha),0,sin(alpha),cos(alpha));
-		// cv::Mat Ry = (cv::Mat_<double>(3,3) << cos(beta),0,-1*sin(beta),0,1,0,sin(beta),0,cos(beta));
-		// cv::Mat Rz = (cv::Mat_<double>(3,3) << cos(gamma),-1*sin(gamma),0,sin(gamma),cos(gamma),0,0,0,1);
 	  cv::Mat Rx = (cv::Mat_<double>(3,3) << 1,0,0,0,cos(alpha),sin(alpha),0,-sin(alpha),cos(alpha));
 	  cv::Mat Ry = (cv::Mat_<double>(3,3) << cos(beta),0,-1*sin(beta),0,1,0,sin(beta),0,cos(beta));
 	  cv::Mat Rz = (cv::Mat_<double>(3,3) << cos(gamma),sin(gamma),0,-sin(gamma),cos(gamma),0,0,0,1);
-		cv::Mat rotVec;
-		rotVec = Rz*Ry*Rx;
+	  cv::Mat rotVec;
+	  rotVec = Rz*Ry*Rx;
 
-		for(int i{0}; i<this->pts3d.size();i++)
-		{
-			this->pts3d[i].x = this->ori_pts3d[i].x*rotVec.at<double>(0,0) + this->ori_pts3d[i].y*rotVec.at<double>(0,1) + this->ori_pts3d[i].z*rotVec.at<double>(0,2);
-			this->pts3d[i].y = this->ori_pts3d[i].x*rotVec.at<double>(1,0) + this->ori_pts3d[i].y*rotVec.at<double>(1,1) + this->ori_pts3d[i].z*rotVec.at<double>(1,2);
-			this->pts3d[i].z = this->ori_pts3d[i].x*rotVec.at<double>(2,0) + this->ori_pts3d[i].y*rotVec.at<double>(2,1) + this->ori_pts3d[i].z*rotVec.at<double>(2,2);
-		}
+	  for(int i{0}; i<this->pts3d.size();i++)
+	  {
+		this->pts3d[i].x = this->ori_pts3d[i].x*rotVec.at<double>(0,0) + this->ori_pts3d[i].y*rotVec.at<double>(0,1) + this->ori_pts3d[i].z*rotVec.at<double>(0,2);
+		this->pts3d[i].y = this->ori_pts3d[i].x*rotVec.at<double>(1,0) + this->ori_pts3d[i].y*rotVec.at<double>(1,1) + this->ori_pts3d[i].z*rotVec.at<double>(1,2);
+		this->pts3d[i].z = this->ori_pts3d[i].x*rotVec.at<double>(2,0) + this->ori_pts3d[i].y*rotVec.at<double>(2,1) + this->ori_pts3d[i].z*rotVec.at<double>(2,2);
+	  }
 	}
 
 	vcam::vcam(cv::Size WindowSize)
