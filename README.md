@@ -17,5 +17,3 @@ PixoCube is a digital version of photo cubes that people usually gift others. It
 * Using dlib based face detection method and controling camera position coordinates as the user moves her/his face, giving the 3D effect.
 * Created a python wrapper for the C++ based code.
 
-[**Detailed explaination of the concepts used in the project can be found at this link**]
-
