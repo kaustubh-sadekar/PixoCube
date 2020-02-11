@@ -36,6 +36,9 @@ of the 3D cube. Thus driving the projection is simply a matrix operation that fi
 pixel coordinates in the image frame for given 3D coordinates of each vertex of the cube.
 These projected pixel coordinates of the cube vertices are used to render the cube.
 
+|![Altext](cube3.png) | ![Altext](Cube4.png) |
+|--|--|
+
 ### Rendering of the 3D cube
 We use the image pixel coordinates derived in step 2.3. to render the final cube. The
 process of rendering the cube consists of the following steps:
@@ -51,6 +54,30 @@ The last step in the process of rendering is performed to ensure that opaque nat
 object. There are many advanced algorithms in graphics processing literature that perform
 this task in a better way but for our case distance based sorting works.
 
+|![Altext](min1.png) | ![Altext](min2.png) |
+|--|--|
+
+### Face tracking for controlling the camera view point
+Camera view point is changed using face tracking to generate an effect where the rendered
+cube would feel like a real cube as it will change the perspective with respect to the
+position of the user.
+Process of updating the camera view point using face tracking consists of the following
+steps :
+
+* Detecting the face of user. I am doing this using the deep learning based face
+detection method available in OpenCV. This method returns list of coordinates of
+bounding boxes for each face detected by the algorithm.
+* Since the application can only support single user we index the bounding box
+coordinates related to the first face detected.
+* We use the bounding box values to further calculate the centre of the bounding box.
+* We use the coordinates of the centre to map the movement of user and the virtual
+camera to generate the 3D perspective effect.
+* The width of the bounding box is used to control the z coordinates of the virtual
+camera.
+Some results of face detection and tracking are show below.
+
+|![Altext](Face_Tracking.png) | ![Altext](Face_Tracking2.png) |
+|--|--|
 
 
 ## Instructions to setup and run the project demo
