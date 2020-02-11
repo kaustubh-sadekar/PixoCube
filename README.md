@@ -13,7 +13,7 @@ PixoCube is a digital version of photo cubes that people usually gift others. It
 * Using **dlib** based face detection method and controling camera position coordinates as the user moves her/his face, giving the 3D effect.
 * Created a **python wrapper** for the C++ based code.
 
-### Creation of 3D cube
+### Creating a 3D cube
 A cube is initialised with centre at origin and side = 1meter. I created two major classes
 one for handling and defining the 3D cube and one for the virtual camera. The cube is
 initialised when the object for 3D cube is created. The cube is defined here by its 8 vertices.
