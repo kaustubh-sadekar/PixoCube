@@ -36,7 +36,7 @@ of the 3D cube. Thus driving the projection is simply a matrix operation that fi
 pixel coordinates in the image frame for given 3D coordinates of each vertex of the cube.
 These projected pixel coordinates of the cube vertices are used to render the cube.
 
-|![Altext](cube3.png) | ![Altext](Cube4.png) |
+|![Altext](proj1.gif) | ![Altext](proj2.gif) |
 |--|--|
 
 ### Rendering of the 3D cube
