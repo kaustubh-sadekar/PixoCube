@@ -64,8 +64,8 @@ position of the user.
 Process of updating the camera view point using face tracking consists of the following
 steps :
 
-* Detecting the face of user. I am doing this using the deep learning based face
-detection method available in OpenCV. This method returns list of coordinates of
+* Detecting the face of user. I am doing this using the face
+detection method available in dlib. This method returns list of coordinates of
 bounding boxes for each face detected by the algorithm.
 * Since the application can only support single user we index the bounding box
 coordinates related to the first face detected.
@@ -74,11 +74,13 @@ coordinates related to the first face detected.
 camera to generate the 3D perspective effect.
 * The width of the bounding box is used to control the z coordinates of the virtual
 camera.
+* **Kalman Filter** is used to track the face. Realtime performance of the software is improved
+by using Kalman Filter to predict the bounding box position and width and face detection is used for only 
+20 percent of the frames to improve/update the estimates.
 Some results of face detection and tracking are show below.
 
 |![Altext](Face_Tracking.png) | ![Altext](Face_Tracking2.png) |
 |--|--|
-
 
 ## Instructions to setup and run the project demo
 
