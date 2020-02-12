@@ -79,8 +79,7 @@ by using Kalman Filter to predict the bounding box position and width and face d
 20 percent of the frames to improve/update the estimates.
 Some results of face detection and tracking are show below.
 
-|![Altext](Face_Tracking.png) | ![Altext](Face_Tracking2.png) |
-|--|--|
+![Altext](tracking.gif)
 
 ## Instructions to setup and run the project demo
 
