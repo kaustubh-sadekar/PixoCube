@@ -3,6 +3,7 @@ PixoCube is a digital version of photo cubes that people usually gift others. It
 
 ![Altext](tracking.gif)
 
+[**Link to the video**](https://www.youtube.com/watch?v=-MyrN2wd8I4)
 
 ## Key points of the project
 
