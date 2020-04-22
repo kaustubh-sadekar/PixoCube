@@ -23,9 +23,10 @@ initialised when the object for 3D cube is created. The cube is defined here by 
 To define a virtual camera we define a set of matrices which represent different properties
 of a camera. We use the following matrices to represent different properties of the virtual
 camera :
-• Translation matrix (T) : To represent the translation of camera in real world.
-• Rotation matrix (R) : To represent the rotations of camera about x, y and z axis.
-• Camera matrix (K) : To represent the properties of virtual camera like, focal length (f),
+
+* Translation matrix (T) : To represent the translation of camera in real world.
+* Rotation matrix (R) : To represent the rotations of camera about x, y and z axis.
+* Camera matrix (K) : To represent the properties of virtual camera like, focal length (f),
 apparent pixel size (sx), apparent centre of the image in pixel coordinates.
 Using the above matrices we define the camera projection matrix (P).
 
