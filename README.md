@@ -38,6 +38,8 @@ of the 3D cube. Thus driving the projection is simply a matrix operation that fi
 pixel coordinates in the image frame for given 3D coordinates of each vertex of the cube.
 These projected pixel coordinates of the cube vertices are used to render the cube.
 
+I was unable to get the rotation effect of the camera due to incorrect implimentation but I was able to solve the bug after getting a better understanding of the fundamental concepts behind image formation and camera projection matrix after attending CS763: Computer Vision Spring 2020 course at IIT Bombay.
+
 |![Altext](proj1.gif) | ![Altext](proj2.gif) |
 |--|--|
 
