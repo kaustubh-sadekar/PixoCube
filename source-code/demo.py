@@ -5,14 +5,17 @@ sys.path.append('build')
 import kosutils
 from tracker import *
 
+# Setting the dimensions for output window
 H = 700
 W = 700
 
 dispWindow = np.zeros((H,W,3),dtype=np.uint8)
 PREDICTOR_PATH = "../shape_predictor_5_face_landmarks.dat"
 
-
+# Creating the object for obj3D class
 obj1 = kosutils.kos_Obj3D(dispWindow.shape[:2])
+
+# Creating the object for kos_vcam class
 cam1 = kosutils.kos_vcam(dispWindow.shape[:2])
 cap = cv2.VideoCapture(0)
 tr = tracker(PREDICTOR_PATH)
