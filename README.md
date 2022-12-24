@@ -48,7 +48,7 @@ I was unable to get the rotation effect of the camera due to incorrect impliment
   <img src='proj2.gif' width=450>
 </p>
 
-### Rendering of the 3D cube
+## Rendering of the 3D cube
 We use the image pixel coordinates derived in step 2.3. to render the final cube. The
 process of rendering the cube consists of the following steps:
 * Storing the projected 2d coordinates of vertices for each face of the cube is a list.
@@ -71,7 +71,7 @@ this task in a better way but for our case distance based sorting works.
   <img src='min2.png' width=450>
 </p>
 
-### Face tracking for controlling the camera view point
+## Face tracking for controlling the camera view point
 Camera view point is changed using face tracking to generate an effect where the rendered
 cube would feel like a real cube as it will change the perspective with respect to the
 position of the user.
