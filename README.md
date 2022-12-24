@@ -1,4 +1,4 @@
-# PixoCube
+## Project in brief
 PixoCube is a digital version of photo cubes that people usually gift others. It is basically a 3D cube with different images consisting of different sides of the cube. The interesting part of this project is I used concepts of **camera projection** and only opencv functions to render the cube. Moreover the camera view point is rendered such that it shifts based on the movement of users face. The rendering code was written using **OpenCV in C++ witout OpenGL**. 
 
 ![Altext](tracking.gif)
@@ -14,12 +14,12 @@ PixoCube is a digital version of photo cubes that people usually gift others. It
 * Using **dlib** based face detection method and controling camera position coordinates as the user moves her/his face, giving the 3D effect.
 * Created a **python wrapper** for the C++ based code.
 
-### Creating a 3D cube
+## Creating a 3D cube
 A cube is initialised with centre at origin and side = 1meter. I created two major classes
 one for handling and defining the 3D cube and one for the virtual camera. The cube is
 initialised when the object for 3D cube is created. The cube is defined here by its 8 vertices.
 
-### Creating the virtual camera
+## Creating the virtual camera
 To define a virtual camera we define a set of matrices which represent different properties
 of a camera. We use the following matrices to represent different properties of the virtual
 camera :
@@ -30,7 +30,7 @@ camera :
 apparent pixel size (sx), apparent centre of the image in pixel coordinates.
 Using the above matrices we define the camera projection matrix (P).
 
-### Deriving projection of 3D cube vertices in the virtual camera
+## Deriving projection of 3D cube vertices in the virtual camera
 The camera projection matrix (P) mentioned in the above section is used to find the
 projection of the 3D cube vertices in the camera frame. Which means given the position
 and orientation of the camera and cube we can find the image coordinates for each vertex
@@ -40,8 +40,13 @@ These projected pixel coordinates of the cube vertices are used to render the cu
 
 I was unable to get the rotation effect of the camera due to incorrect implimentation but I was able to solve the bug after getting a better understanding of the fundamental concepts behind image formation and camera projection matrix after attending CS763: Computer Vision Spring 2020 course at IIT Bombay.
 
-|![Altext](proj1.gif) | ![Altext](proj2.gif) |
-|--|--|
+<p align='center'>
+  <img src='proj1.gif' width=450>
+</p>
+
+<p align='center'>
+  <img src='proj2.gif' width=450>
+</p>
 
 ### Rendering of the 3D cube
 We use the image pixel coordinates derived in step 2.3. to render the final cube. The
@@ -58,8 +63,13 @@ The last step in the process of rendering is performed to ensure that opaque nat
 object. There are many advanced algorithms in graphics processing literature that perform
 this task in a better way but for our case distance based sorting works.
 
-|![Altext](min1.png) | ![Altext](min2.png) |
-|--|--|
+<p align='center'>
+  <img src='min1.png' width=450>
+</p>
+
+<p align='center'>
+  <img src='min2.png' width=450>
+</p>
 
 ### Face tracking for controlling the camera view point
 Camera view point is changed using face tracking to generate an effect where the rendered
@@ -83,7 +93,9 @@ by using Kalman Filter to predict the bounding box position and width and face d
 20 percent of the frames to improve/update the estimates.
 Some results of face detection and tracking are show below.
 
-![Altext](tracking.gif)
+<p align='center'>
+  <img src='tracking.gif' width=450>
+</p>
 
 ## Instructions to setup and run the project demo
 
